@@ -48,7 +48,7 @@ def get_list_sequences():
     sequence = [0, 1, 2]
     list_sequences = [sequence.copy()]
 
-    while list_sequences[-1] != [7, 8, 9]:
+    while list_sequences[-1] < [7, 8, 9]:
         if is_new_sequence(sequence, list_sequences):
             list_sequences.append(sequence.copy())
         else:
