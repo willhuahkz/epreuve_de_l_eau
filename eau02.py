@@ -10,5 +10,5 @@ if length_args > 1:
     for i in range (length_args - 1, 0, -1):
         print(sys.argv[i])
 else:
-    print('error.')
+    print('error')
     sys.exit(1)
