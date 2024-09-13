@@ -43,5 +43,5 @@ if len(sys.argv) > 1 and is_int(sys.argv[1]):
     NEXT_PRIME = get_next_prime(arg)
     print(NEXT_PRIME)
     sys.exit(0)
-print('error')
+print('-1')
 sys.exit(1)
