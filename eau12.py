@@ -21,19 +21,19 @@ def bubble_sort(array_to_sort):
     while not is_sorted(array_to_sort):
         for i in range(len(array_to_sort) - 1):
             if array_to_sort[i] > array_to_sort[i + 1]:
-                # function
                 tmp = array_to_sort[i + 1]
                 array_to_sort[i + 1] = array_to_sort[i]
                 array_to_sort[i] = tmp
-    return array
+    return array_to_sort
 
-if len(sys.argv) > 1 and is_string_only_digit(sys.argv[1]):
-    array = []
-    del sys.argv[0]
-    for arg in sys.argv:
-        array.append(int(arg))
-    array_sorted = bubble_sort(array)
-    RES_STR = ' '.join(map(str, array_sorted))
-    print(RES_STR)
-else:
-    print('error')
+if __name__ == '__main__':
+    if len(sys.argv) > 1 and is_string_only_digit(sys.argv[1]):
+        array = []
+        del sys.argv[0]
+        for arg in sys.argv:
+            array.append(int(arg))
+        array_sorted = bubble_sort(array)
+        RES_STR = ' '.join(map(str, array_sorted))
+        print(RES_STR)
+    else:
+        print('error')
