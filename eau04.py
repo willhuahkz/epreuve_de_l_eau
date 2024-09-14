@@ -2,8 +2,22 @@
 Module to find the next prime number
 """
 import sys
-import math
 from utils.is_int import is_int
+
+def square_root_of(number):
+    """
+    Get square root of a number
+    Same resultat of math.sqrt
+    """
+    i = 0
+    limit = 500
+    # there is no overflow in python
+    while i < limit:
+        res = i * i
+        if res >= number:
+            return i
+        i += 1
+    return None
 
 def is_prime(value):
     """
@@ -12,7 +26,10 @@ def is_prime(value):
     if value > 3:
         if value & 1 == 0 or value % 3 == 0:
             return False
-        limit = int(math.sqrt(value)) + 1
+        sqr = square_root_of(value)
+        if sqr is None:
+            return False
+        limit = sqr + 1
         # to avoid number divisable by 2 and 3
         for i in range(5, limit, 6):
             if value % i == 0 or value % (i + 2) == 0:
